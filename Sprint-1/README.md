@@ -12,7 +12,6 @@ let lista = [
      {"id" : 3, "name": "Nikola Tesla", "bio" : "Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada."},
      {"id" : 4, "name": "Nicolau Copérnico", "bio": "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."}];
 
- ];
  a) Crie uma função que retorne a bio do id passado
  b) Crie uma função que retorne o name do id passado
  c) Crie uma função que apague um item da lista a partir de um id passado
