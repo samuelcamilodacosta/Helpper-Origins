@@ -12,7 +12,6 @@ const button = document.querySelector('#send');
 button.addEventListener('click', function (e) {
     e.preventDefault();
     let word = document.querySelector('#word');
-    //solution (b)
     let answer = document.getElementById('answer');
-    answer.innerHTML = `Quantidade de vogais: ${amountVowels(word.value)}`;
+    answer.innerHTML = `Quantidade de vogais: ${amountVowels(word.value)}`;   //solution (b)
 });
