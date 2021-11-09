@@ -7,8 +7,8 @@ console.log(classOfExample.amountVowels());
 
 /* solution b */
 const button: HTMLButtonElement = document.querySelector('#send') as HTMLButtonElement;
-button.addEventListener('click', function (e: MouseEvent) {
-  e.preventDefault();
+button.addEventListener('click', function (event: MouseEvent) {
+  event.preventDefault();
   let word: HTMLInputElement = document.querySelector('#word') as HTMLInputElement; 
   if(word.value==''){
     alert("Por favor, informe a palavra para ser analisada."); 
