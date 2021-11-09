@@ -1,10 +1,9 @@
 export default class Words {
     constructor(word) {
-        this._word = word,
-            this._vowels = ['a', 'e', 'i', 'o', 'u'];
+        this._vowels = ['a', 'e', 'i', 'o', 'u'];
+        this._word = word;
     }
     amountVowels() {
-        this._word = this._word.toLowerCase().normalize('NFD');
         let result = this._word.toLowerCase().normalize('NFD').split('').filter((letter) => this._vowels.includes(letter));
         return result.length;
     }

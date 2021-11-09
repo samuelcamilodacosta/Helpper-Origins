@@ -1,4 +1,4 @@
-import Words from "./class.js";
+import Words from "./class";
 
 /* solution a */
 let example: string = "bootcamp origin helpper";
