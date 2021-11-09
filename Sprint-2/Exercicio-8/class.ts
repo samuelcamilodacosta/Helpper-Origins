@@ -4,24 +4,41 @@ interface IList {
     bio: string
 }
 
-export default class List {
+class FactoryList {
     private _list: IList[];
-    private _tbody: HTMLTableSectionElement;
     constructor(list: IList[]) {
         this._list = list;
-        this._tbody = document.querySelector('tbody') as HTMLTableSectionElement;
     }
     public showTable(){
-        this._tbody;  
-        this._tbody.innerHTML = '';
+        let tbody = document.querySelector('tbody') as HTMLTableSectionElement;;  
+        tbody.innerHTML = '';
         this._list.forEach((object: any) => {
+            delete object.id;
             let tr: HTMLTableRowElement = document.createElement('tr') as HTMLTableRowElement;
             for (let property in object) {
                 let td: HTMLTableCellElement = document.createElement('td') as HTMLTableCellElement;
                 td.innerHTML = object[property];
                 tr.appendChild(td);
             };
-        this._tbody.appendChild(tr);
+        tbody.appendChild(tr);
         });
+    }
+}
+
+export default class List extends FactoryList{
+    private _buttonAda: HTMLElement;
+    private _buttonGenius: HTMLElement;
+    constructor(list: IList[]) {
+        super(list)
+        this._buttonAda = document.getElementById('buttonWhoCreatesAda') as HTMLElement;
+        this._buttonGenius = document.getElementById('buttonGeniusList') as HTMLElement;
+    }
+    public showButtonWhoCreatesAda(){
+        this._buttonAda.style.display = 'flex';
+        this._buttonGenius.style.display = 'none';
+    }
+    public buttonShowGeniusList(){
+        this._buttonAda.style.display = 'none';
+        this._buttonGenius.style.display = 'flex';
     }
 }
