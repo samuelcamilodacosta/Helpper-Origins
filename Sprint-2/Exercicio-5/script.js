@@ -4,16 +4,7 @@ let example = document.querySelector('#wordExample');
 let classOfExample = new Words(example.value);
 let answerExample = document.getElementById('answerExample');
 answerExample.innerHTML = `Quantidade de vogais: ${classOfExample.amountVowels()}`;
-// solution (b)
-/**
-  * User event interation
-  * When the event button is clicked, it validates to prevent an empty value from being passed
-  *
-  * @param word - receive the value of the input id #word
-  * @param classOfWord - creates a class with the constructor method passing the word string value
-  *
-  * @returns the result of applying the amount vowels method if string is not empty else returns an alert.
-  */
+// solution (b) 
 const button = document.querySelector('#send');
 button.addEventListener('click', actionOnClick);
 /**

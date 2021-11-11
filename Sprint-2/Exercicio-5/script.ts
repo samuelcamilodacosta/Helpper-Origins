@@ -7,9 +7,10 @@ let classOfExample: Words = new Words(example.value);
 let answerExample: HTMLElement = document.getElementById('answerExample') as HTMLElement;
 answerExample.innerHTML = `Quantidade de vogais: ${classOfExample.amountVowels()}`;
 
-// solution (b)
+// solution (b) 
 const button: HTMLButtonElement = document.querySelector('#send') as HTMLButtonElement;
 button.addEventListener('click', actionOnClick);
+
 /**
  * This function is responsible for validating the input and, if possible, 
  * printing the response
