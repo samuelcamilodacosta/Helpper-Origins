@@ -4,14 +4,12 @@ export default class Words{
     constructor(word: string){
         this._word = word
     }
-    public amountVowels(): number {
-        /**
+    /**
         * This method calculates the number of vowels in the sentence
-        * 
-        * @parameter this._word - the sentence received by the constructor for the variable word
-        * 
-        * @returns result that is the number of vowels in the setence
+        *         * 
+        * @returns returns the size of the string vector that contains the vowels of the setence
         */
+    public amountVowels(): number {
         let result: string[] = this._word.toLowerCase().normalize('NFD').split('').filter((letter: string) => this._vowels.includes(letter));
         return result.length;
     }

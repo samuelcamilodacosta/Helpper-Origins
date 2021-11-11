@@ -1,14 +1,6 @@
 import Words from "./class.js";
 
-// solution (a) 
-
-/**
- * Solution (a) only introduces the user to an example of how the amount vowels method works
- * @param example - receive the value prefixed on input id #wordExample
- * @param classOfExample - creates a class passing the example string value
- * @param answerExample - receive the value of method amountVowels on classOfExample
- * and print on HTML
- */
+//Solution (a) only introduces the user to an example of how the amount vowels method works
 
 let example: HTMLInputElement = document.querySelector('#wordExample') as HTMLInputElement; 
 let classOfExample: Words = new Words(example.value);
@@ -16,10 +8,7 @@ let answerExample: HTMLElement = document.getElementById('answerExample') as HTM
 answerExample.innerHTML = `Quantidade de vogais: ${classOfExample.amountVowels()}`;
 
 // solution (b)
-
-const button: HTMLButtonElement = document.querySelector('#send') as HTMLButtonElement;
-button.addEventListener('click', function (event: MouseEvent) {
-  /**
+/**
   * User event interation 
   * When the event button is clicked, it validates to prevent an empty value from being passed
   * 
@@ -28,6 +17,17 @@ button.addEventListener('click', function (event: MouseEvent) {
   * 
   * @returns the result of applying the amount vowels method if string is not empty else returns an alert.
   */
+const button: HTMLButtonElement = document.querySelector('#send') as HTMLButtonElement;
+button.addEventListener('click', actionOnClick);
+
+/**
+ * This function is responsible for validating the input and, if possible, 
+ * printing the response
+ * @param event 
+ */
+
+function actionOnClick(event: MouseEvent): void {
+  
   event.preventDefault();
   let word: HTMLInputElement = document.querySelector('#word') as HTMLInputElement; 
   if(word.value==''){
@@ -36,4 +36,4 @@ button.addEventListener('click', function (event: MouseEvent) {
   let classOfWord: Words = new Words(word.value)
   let answer: HTMLElement = document.getElementById('answer') as HTMLElement;
   answer.innerHTML = `Quantidade de vogais: ${classOfWord.amountVowels()}`;
-});
+}
