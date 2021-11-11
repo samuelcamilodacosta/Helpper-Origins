@@ -7,15 +7,19 @@ let list = new List([
   { "id": 4, "name": "Nicolau Copérnico", "bio": "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar." }
 ]);
 
+// 6 (a)
 let idSearchName: string = prompt("Enter ID to search name: ") as string;
 alert("Name: " + list.returnName(parseInt(idSearchName)));
 
+// 6 (b)
 let idSearchBio: string = prompt("Enter ID to search bio: ") as string;
 alert("Biography: " + list.returnBio(parseInt(idSearchBio)));
 
+// 6 (c)
 let idToDeleteRow: string = prompt("Enter ID to delete row: ") as string;
 list.deleteById(parseInt(idToDeleteRow));
 
+// 6 (d)
 let idToAction: string = prompt("Enter ID to change item: ") as string;
 let actionToDo: string = prompt("Which property do you want to change, \"name\" or \"biography\"? ") as string;
 let textToWrite: string = prompt(`What you want to write on ${actionToDo}?`) as string;

@@ -7,15 +7,19 @@ let list = new List([
   {"id" : 4, "name": "Nicolau Copérnico", "bio": "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar."}
 ]);
 
+//6 (a)
 let id: number = parseInt(prompt("Enter ID to find the name: ") as string);
 list.returnName(id);
 
+//6 (b)
 id = parseInt(prompt("Enter ID to find the biography: ") as string);
 list.returnBio(id);
 
+//6 (c)
 id = parseInt(prompt("Enter ID to delete the line: ") as string);
 list.deleteLine(id);
 
+//6 (d)
 id = parseInt(prompt("Enter the ID you want to change: ") as string);
 let action: string = prompt("What you want to change, \"name\" or \"biography\"? ") as string;
 let text: string = prompt(`What you want to write on ${action}?`) as string;

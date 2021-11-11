@@ -5,12 +5,16 @@ let list = new List([
     { "id": 3, "name": "Nikola Tesla", "bio": "Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada." },
     { "id": 4, "name": "Nicolau Copérnico", "bio": "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar." }
 ]);
+//6 (a)
 let id = parseInt(prompt("Enter ID to find the name: "));
 list.returnName(id);
+//6 (b)
 id = parseInt(prompt("Enter ID to find the biography: "));
 list.returnBio(id);
+//6 (c)
 id = parseInt(prompt("Enter ID to delete the line: "));
 list.deleteLine(id);
+//6 (d)
 id = parseInt(prompt("Enter the ID you want to change: "));
 let action = prompt("What you want to change, \"name\" or \"biography\"? ");
 let text = prompt(`What you want to write on ${action}?`);
