@@ -17,7 +17,6 @@ button.addEventListener('click', actionOnClick);
  * printing the response
  * @param event 
  */
-
 function actionOnClick(event: MouseEvent): void {
   
   event.preventDefault();
