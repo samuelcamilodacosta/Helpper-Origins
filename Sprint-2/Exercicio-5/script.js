@@ -8,6 +8,7 @@ answerExample.innerHTML = `Quantidade de vogais: ${classOfExample.amountVowels()
 const button = document.querySelector('#send');
 button.addEventListener('click', actionOnClick);
 /**
+ * actionOnClick
  * This function is responsible for validating the input and, if possible,
  * printing the response
  * @param event

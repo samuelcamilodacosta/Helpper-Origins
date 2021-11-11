@@ -8,7 +8,7 @@ export default class Words {
         this._word = word;
     }
     /**
-     * Amount Vowels
+     * amountVowels
      * This method calculates the number of vowels in the sentence
      * @returns returns the size of the string vector that contains the vowels of the setence
      */

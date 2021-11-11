@@ -12,6 +12,7 @@ const button: HTMLButtonElement = document.querySelector('#send') as HTMLButtonE
 button.addEventListener('click', actionOnClick);
 
 /**
+ * actionOnClick
  * This function is responsible for validating the input and, if possible, 
  * printing the response
  * @param event 
