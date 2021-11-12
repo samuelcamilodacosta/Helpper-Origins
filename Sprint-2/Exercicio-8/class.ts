@@ -1,44 +1,86 @@
-interface IList {
-    id: number;
-    name: string;
-    bio: string
-}
+/**
+ * Person
+ * This class represents a Person with an id, a name and a biography.
+ */
+class Person{
+    public _id: number;
+    private _name: string;
+    private _bio: string;
 
-class FactoryList {
-    private _list: IList[];
-    constructor(list: IList[]) {
-        this._list = list;
+    /**
+     * class constructor 
+     * @param id - Person id
+     * @param name - Person name
+     * @param bio - Person biography
+     */
+    constructor(id: number, name: string, bio: string){
+        this._id = id;
+        this._name = name;
+        this._bio = bio;
     }
-    public showTable(){
-        let tbody = document.querySelector('tbody') as HTMLTableSectionElement;;  
-        tbody.innerHTML = '';
-        this._list.forEach((object: any) => {
-            delete object.id;
-            let tr: HTMLTableRowElement = document.createElement('tr') as HTMLTableRowElement;
-            for (let property in object) {
-                let td: HTMLTableCellElement = document.createElement('td') as HTMLTableCellElement;
-                td.innerHTML = object[property];
-                tr.appendChild(td);
-            };
+    
+    /**
+    * getArray
+    * This method returns the Person information
+    * 
+    * @returns an array of strings with the Person name and bio
+    */
+    public getArray(): string[]{
+        return [this._name, this._bio];
+    }
+
+    /**
+     * showList
+     * This method takes a string array and creates a table in html with the array.
+     * 
+     * @param array - An array of string.
+     */
+    public showList(array: string[]): void{
+        let tbody = document.querySelector('tbody') as HTMLTableSectionElement;  
+        let tr: HTMLTableRowElement = document.createElement('tr') as HTMLTableRowElement;
+        for (let property in array){
+            let td: HTMLTableCellElement = document.createElement('td') as HTMLTableCellElement;
+            td.innerHTML = array[property];
+            tr.appendChild(td);
+        };
         tbody.appendChild(tr);
-        });
     }
 }
 
-export default class List extends FactoryList{
-    private _buttonAda: HTMLElement;
-    private _buttonGenius: HTMLElement;
-    constructor(list: IList[]) {
-        super(list)
-        this._buttonAda = document.getElementById('buttonWhoCreatesAda') as HTMLElement;
-        this._buttonGenius = document.getElementById('buttonGeniusList') as HTMLElement;
+/**
+ * AdaLovelace
+ * This class represents the Person Ada Lovelace.
+ */
+export class AdaLovelace extends Person{
+
+    /**
+     * creatorAda
+     * This method answer who is the creator of the programming language Ada
+     * 
+     * @returns an array string with name of language and the answer of who created the language.
+     */  
+    public creatorAda(): string[]{
+        return ["Linguagem Ada", "Foi originalmente produzida por uma equipe liderada por Jean Ichbiah. O nome Ada vem de Ada Lovelace, a mulher conhecida por ter escrito o primeiro algoritmo para ser processado por uma máquina na história da computação."]
     }
-    public showButtonWhoCreatesAda(){
-        this._buttonAda.style.display = 'flex';
-        this._buttonGenius.style.display = 'none';
-    }
-    public buttonShowGeniusList(){
-        this._buttonAda.style.display = 'none';
-        this._buttonGenius.style.display = 'flex';
-    }
+}
+
+/**
+ * AlanTuring
+ * This class represents the person Alan Turing.
+ */
+export class AlanTuring extends Person{
+}
+
+/**
+ * NikolaTesla
+ * This class represents the person Nikola Tesla.
+ */
+export class NikolaTesla extends Person{
+}
+
+/**
+ * NicolauCopernico
+ * This class represents the person Nicolau Copérnico.
+ */
+export class NicolauCopernico extends Person{
 }
