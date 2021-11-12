@@ -38,7 +38,7 @@ function answerAda(event: MouseEvent): void{
   let creatorAda = new PersonFactory;
   creatorAda.clearTable();
   creatorAda.getList([
-    { "id": 1, "name": "?", "bio": "?", "creatorAda": "sim"},
+    { "id": 1, "name": "Ada Lovelace", "bio": "?", "creatorAda": "sim"},
   ]);
   buttonShowGeniusList();
 };

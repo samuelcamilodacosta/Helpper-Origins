@@ -3,8 +3,8 @@
  * This class represents a Person with an id, a name and a biography.
  */
 class Person{
-    public _id: number;
-    private _name: string;
+    private _id: number;
+    public _name: string;
     private _bio: string;
 
     /**
@@ -57,10 +57,10 @@ export class AdaLovelace extends Person{
      * creatorAda
      * This method answer who is the creator of the programming language Ada
      * 
-     * @returns an array string with name of language and the answer of who created the language.
+     * @returns an array string with property name and the answer of who created the language.
      */  
     public creatorAda(): string[]{
-        return ["Linguagem Ada", "Foi originalmente produzida por uma equipe liderada por Jean Ichbiah. O nome Ada vem de Ada Lovelace, a mulher conhecida por ter escrito o primeiro algoritmo para ser processado por uma máquina na história da computação."]
+        return [this._name, "A linguagem foi originalmente produzida por uma equipe liderada por Jean Ichbiah. O nome Ada vem de Ada Lovelace, a mulher conhecida por ter escrito o primeiro algoritmo para ser processado por uma máquina na história da computação."]
     }
 }
 
