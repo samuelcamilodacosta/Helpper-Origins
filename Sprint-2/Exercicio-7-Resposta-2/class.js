@@ -15,9 +15,7 @@ export default class List {
      * @returns 0 if list is numeric or -1  if not.
      */
     numericalList() {
-        this._list.forEach((arrayItem) => {
-            (parseFloat(arrayItem) || arrayItem == "0") ? parseFloat(arrayItem) : this._validator = -1;
-        });
+        this._list.forEach((arrayItem) => (parseFloat(arrayItem) || arrayItem == "0") ? parseFloat(arrayItem) : this._validator = -1);
         return this._validator;
     }
     /**
