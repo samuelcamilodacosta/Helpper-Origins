@@ -26,10 +26,9 @@ export default class List {
     
     /**
      * findBiggerSmallerAndAverageValue
-     * This method finds the largest, smallest, and average value, adds it to an array, 
-     * and returns the array.
+     * This method finds the biggest, smallest, and average value, adds on array and return the array.
      * 
-     * @returns array - an array with the bigger, smaller and the average on list.
+     * @returns array - an array with the bigger, smaller and average on list.
      * 
      * @example 
      * Here's an example with list = [0, 1, 2, 3];
