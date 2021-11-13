@@ -19,8 +19,6 @@ export default class List {
      * This method returns the name searched by id.
      * 
      * @param id - the value to look for in the list.
-     * 
-     * @returns the name searched or an id not found warning for an alert.
      */
     public returnName(id: number): void {
         for (let index: number = 0; index < this._list.length; index++) {
@@ -36,8 +34,6 @@ export default class List {
      * This method returns the bio searched by id.
      * 
      * @param id - the value to look for in the list.
-     * 
-     * @returns the bio searched or an id not found warning for an alert.
      */
     public returnBio(id: number): void{
         for (let index: number = 0; index < this._list.length; index++) {
@@ -53,8 +49,6 @@ export default class List {
      * This method delete an array from the object by id.
      * 
      * @param id - the value to look for in the list.
-     * 
-     * @returns alert saying if the array of id was deleted or not found.
      */
     public deleteLine(id: number): void{
         for (let index: number = 0; index < this._list.length; index++) {
@@ -63,7 +57,6 @@ export default class List {
                 return alert(`Line of id: ${id} deleted!`);
             }
         }
-        
         return alert("Id not found!");
     }
 
@@ -74,8 +67,6 @@ export default class List {
      * @param id - the value to look for in the list to change.
      * @param action - receives a value to be compared that will define which object's property will be changed.
      * @param text - the string that will replace the old value found;
-     * 
-     * @returns alerts confirming changes or saying if any properties were not found
      */
     public changeBioOrName(id: number, action: string, text: string): void{
         for (let index: number = 0; index < this._list.length; index++) {

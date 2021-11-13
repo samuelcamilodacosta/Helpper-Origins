@@ -23,7 +23,7 @@ export default class List {
      * @returns - the name searched or string saying id not found.
      */
     public returnName(id: number): string{
-        const index: number = this._list.findIndex((item) => { return item.id === id});
+        const index: number = this._list.findIndex((item) => item.id === id);
         if (index != -1) return this._list[index].name;
         else return "ID not found!";
     }
@@ -37,7 +37,7 @@ export default class List {
      * @returns the bio searched or string saying id not found.
      */
     public returnBio(id: number): string{
-        const index: number = this._list.findIndex((item) => { return item.id === id});
+        const index: number = this._list.findIndex((item) => item.id === id);
         if (index != -1) return this._list[index].bio;
         else return "ID not found!";
     }
@@ -47,8 +47,6 @@ export default class List {
      * This method delete an array from the object by id.
      * 
      * @param id - the value to look for in the list.
-     * 
-     * @returns alert saying if the array of id was deleted or not found.
      */
     public deleteById(id: number): void {
         const index: number = this._list.findIndex((item) => { return item.id === id});
@@ -66,21 +64,20 @@ export default class List {
      * @param id - the value to look for in the list to change.
      * @param action - if the action is validated, it calls the method responsible for the change.
      * @param text - the string that will replace the old value found.
-     * 
-     * @returns alerts confirming changes or saying if any properties were not found.
      */
     public changeBioOrName(id: number, action: string, text: string): void{
-        const index: number = this._list.findIndex((item) => { return item.id === id});
+        const index: number = this._list.findIndex((item) =>  item.id === id);
         if (index != -1) {
-          if (action == 'name') {
-            this.changeName(index, text);
-            return alert("Name changed.");
-          }
-          else if (action == 'biography') {
-            this.changeBio(index, text);
-            return alert("Biography changed.");
-          }
-          else return alert("Property that you want to change not found!");
+            switch (action){
+                case 'name':
+                    this.changeName(index, text);
+                    return alert("Name changed.");
+                case 'biography':
+                    this.changeBio(index, text);
+                    return alert("Biography changed.");
+                default:
+                    return alert("Property that you want to change not found!");
+            }
         }
         else return alert("ID to change not found!");
     }
