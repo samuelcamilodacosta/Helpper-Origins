@@ -11,8 +11,6 @@ export default class List {
      * This method returns the name searched by id.
      *
      * @param id - the value to look for in the list.
-     *
-     * @returns the name searched or an id not found warning for an alert.
      */
     returnName(id) {
         for (let index = 0; index < this._list.length; index++) {
@@ -27,8 +25,6 @@ export default class List {
      * This method returns the bio searched by id.
      *
      * @param id - the value to look for in the list.
-     *
-     * @returns the bio searched or an id not found warning for an alert.
      */
     returnBio(id) {
         for (let index = 0; index < this._list.length; index++) {
@@ -43,8 +39,6 @@ export default class List {
      * This method delete an array from the object by id.
      *
      * @param id - the value to look for in the list.
-     *
-     * @returns alert saying if the array of id was deleted or not found.
      */
     deleteLine(id) {
         for (let index = 0; index < this._list.length; index++) {
@@ -62,24 +56,21 @@ export default class List {
      * @param id - the value to look for in the list to change.
      * @param action - receives a value to be compared that will define which object's property will be changed.
      * @param text - the string that will replace the old value found;
-     *
-     * @returns alerts confirming changes or saying if any properties were not found
      */
     changeBioOrName(id, action, text) {
         for (let index = 0; index < this._list.length; index++) {
             if (this._list[index].id == id) {
-                if (action == 'name') {
-                    this._list[index].name = text;
-                    return alert(`Property: ${action} of id: ${id} changed to ${text}`);
-                    ;
-                }
-                else if (action == 'biography') {
-                    this._list[index].bio = text;
-                    return alert(`Property: ${action} of id: ${id} changed to ${text}`);
-                    ;
-                }
-                else {
-                    return alert("Property that you want to change not found!");
+                switch (action) {
+                    case 'name':
+                        this._list[index].name = text;
+                        return alert(`Property: ${action} of id: ${id} changed to ${text}`);
+                        ;
+                    case 'biography':
+                        this._list[index].bio = text;
+                        return alert(`Property: ${action} of id: ${id} changed to ${text}`);
+                        ;
+                    default:
+                        return alert("Property that you want to change not found!");
                 }
             }
         }

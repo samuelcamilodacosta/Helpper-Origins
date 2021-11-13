@@ -71,16 +71,16 @@ export default class List {
     public changeBioOrName(id: number, action: string, text: string): void{
         for (let index: number = 0; index < this._list.length; index++) {
             if (this._list[index].id == id) {
-              if (action == 'name'){
-                  this._list[index].name = text; 
-                  return alert(`Property: ${action} of id: ${id} changed to ${text}`);;
-              }
-              else if (action == 'biography'){ 
-                  this._list[index].bio = text;
-                  return alert(`Property: ${action} of id: ${id} changed to ${text}`);;
-              }
-              else {
-                return alert("Property that you want to change not found!");
+                switch (action){
+                    case 'name':
+                        this._list[index].name = text; 
+                        return alert(`Property: ${action} of id: ${id} changed to ${text}`);;
+              
+                    case 'biography':
+                        this._list[index].bio = text;
+                        return alert(`Property: ${action} of id: ${id} changed to ${text}`);;
+                    default:
+                        return alert("Property that you want to change not found!");
                 }
             }
         }
