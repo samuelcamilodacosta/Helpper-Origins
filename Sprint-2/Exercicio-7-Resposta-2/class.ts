@@ -19,7 +19,7 @@ export default class List {
      * 
      * @returns 0 if list is numeric or -1  if not.
      */
-    numericalList(){
+    numericalList(): number{
         this._list.forEach((arrayItem) => (parseFloat(arrayItem) || arrayItem == "0") ? parseFloat(arrayItem) : this._validator = -1);
         return this._validator;
     }
@@ -36,7 +36,7 @@ export default class List {
      * //Prints [3, 0, 1.5];
      * console.log(list.findBiggerSmallerAndAverageValue());
      */
-    findBiggerSmallerAndAverageValue(){
+    findBiggerSmallerAndAverageValue(): number[]{
         let biggerValue: number = parseFloat(this._list[0]), 
             smallerValue: number = parseFloat(this._list[0]),
             value: number;
