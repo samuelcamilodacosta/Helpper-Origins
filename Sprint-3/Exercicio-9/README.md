@@ -2,8 +2,6 @@
 
 Repositório inicial para os participantes do bootcamp realizarem seus exercícios
 
-# Exercicio-9
-
 ## ORM
 
 Para manipulação do banco de dados e entidades está sendo utilizada a biblioteca TypeORM:
